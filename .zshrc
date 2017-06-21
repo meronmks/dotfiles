@@ -1,8 +1,11 @@
+# 環境変数
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export LANG=ja_JP.UTF-8
+export EDITOR=vim
 
 cdpath=(~)
 
-## 重複パスを登録しない
+# 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
 # Set up the prompt
@@ -42,6 +45,8 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+#ビープ音を鳴らさない
 setopt no_beep
 
 #alias
