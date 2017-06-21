@@ -42,7 +42,16 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 setopt no_beep
 
 #alias
-alias ls='ls --color=auto'
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+	alias ls='ls -G'
+        ;;
+    linux*)
+        #ここにLinux向けの設定
+	alias ls='ls --color=auto'
+        ;;
+esac
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
