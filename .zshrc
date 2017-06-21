@@ -2,6 +2,9 @@ export LANG=ja_JP.UTF-8
 
 cdpath=(~)
 
+## 重複パスを登録しない
+typeset -U path cdpath fpath manpath
+
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -56,6 +59,9 @@ esac
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+#npm
+npm completion
 
 #zplug
 unsetopt BG_NICE
