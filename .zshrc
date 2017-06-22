@@ -24,7 +24,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# Use modern completion system
+# 補完
 autoload -Uz compinit
 compinit
 
@@ -37,6 +37,7 @@ eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+# 補完で大文字小文字区別しない
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
@@ -72,6 +73,7 @@ npm completion
 unsetopt BG_NICE
 source ~/.zplug/init.zsh
 
+#追加したいプラグインをここへ
 zplug "ssh0/dot", use:"*.sh"
 
 # Install plugins if there are plugins that have not been installed
