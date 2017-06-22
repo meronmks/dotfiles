@@ -1,5 +1,4 @@
 # 環境変数
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
@@ -55,6 +54,7 @@ case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
 	alias ls='ls -G'
+        export PATH=$HOME/.nodebrew/current/bin:$PATH
         ;;
     linux*)
         #ここにLinux向けの設定
