@@ -2,6 +2,10 @@
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
+# pyenvの環境変数等設定
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 cdpath=(~)
 
 # 重複パスを登録しない
