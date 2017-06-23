@@ -12,7 +12,6 @@ cdpath=(~)
 typeset -U path cdpath fpath manpath
 
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -95,3 +94,15 @@ zplug load --verbose
 compdef dotall=dot_main
 export DOT_REPO="https://github.com/meronmks/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
+
+# git設定
+RPROMPT="%{${reset_color}%}"
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
