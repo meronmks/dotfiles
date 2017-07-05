@@ -16,6 +16,8 @@ set statusline=%F%m%r%h%w%={[FORMAT=%{&ff}][ENC=%{&fileencoding}][POS=%l/%L,%v]}
 " Tab系
 " Tab文字を半角スペースにする
 set expandtab
+" タブ幅を4にする
+set tabstop=4
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
