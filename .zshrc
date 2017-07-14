@@ -78,6 +78,7 @@ source ~/.zplug/init.zsh
 
 #追加したいプラグインをここへ
 zplug "ssh0/dot", use:"*.sh"
+zplug "zsh-users/zsh-completions"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
