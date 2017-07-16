@@ -13,10 +13,11 @@ cdpath=(~)
 # 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
-# Set up the prompt
+# プロンプトの設定
 autoload -Uz promptinit
 promptinit
-prompt adam1
+PROMPT="%~
+%# "
 
 setopt histignorealldups sharehistory
 
@@ -37,7 +38,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
