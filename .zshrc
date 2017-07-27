@@ -2,13 +2,24 @@
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
+cdpath=(~)
+
 # pyenvの環境変数等設定
 if [[ -e $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
-cdpath=(~)
+
+#fzfの存在確認となければインストールする
+if [ -e $HOME/.fzf ]; then
+    # 存在している場合（一応確認）
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+else
+    # 存在しない場合
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+    $HOME/.fzf/install
+fi
 
 # 重複パスを登録しない
 typeset -U path cdpath fpath manpath
@@ -109,3 +120,4 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
