@@ -11,6 +11,8 @@ set number
 set laststatus=2
 " シンタックスハイライトON
 syntax on
+colorscheme molokai
+set t_Co=256
 " ステータスバーに表示するもの設定
 set statusline=%F%m%r%h%w%={[FORMAT=%{&ff}][ENC=%{&fileencoding}][POS=%l/%L,%v]}
 " Tab系
