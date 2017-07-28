@@ -4,7 +4,9 @@ cdpath=(~)
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
-export GETAROOT=~/Desktop/GETA
+export GETAROOT=$HOME/Desktop/GETA
+
+PATH=$PATH:$HOME/.dotfiles/tmux
 
 # pyenvの環境変数等設定
 if [[ -e $HOME/.pyenv ]]; then
