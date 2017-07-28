@@ -107,6 +107,10 @@ alias egrep='egrep --color=auto'
 npm completion
 
 #zplug
+if [ ! -e ~/.zplug ]; then
+  git clone https://github.com/b4b4r07/zplug ~/.zplug
+fi
+
 unsetopt BG_NICE
 source ~/.zplug/init.zsh
 
