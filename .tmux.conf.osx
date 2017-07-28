@@ -1,0 +1,6 @@
+#Macの固有設定
+setw -g mode-keys vi
+
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-pipe "reattach-to-user-namespace pbcopy"
+unbind -T copy-mode-vi Enter
