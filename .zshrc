@@ -1,9 +1,10 @@
+cdpath=(~)
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
-
-cdpath=(~)
+export GETAROOT=~/Desktop/GETA
 
 # pyenvの環境変数等設定
 if [[ -e $HOME/.pyenv ]]; then
