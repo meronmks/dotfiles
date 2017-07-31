@@ -4,14 +4,18 @@ cdpath=(~)
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
+export PATH=$HOME/.linuxbrew/bin:$PATH
+export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
+export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
+export XDG_DATA_DIRS=$HOME/.linuxbrew/share:$XDG_DATA_DIRS
 export GETAROOT=$HOME/Desktop/GETA
 
 PATH=$PATH:$HOME/.dotfiles/tmux
 
 # pyenvの環境変数等設定
 if [[ -e $HOME/.pyenv ]]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
 fi
 
@@ -92,12 +96,14 @@ setopt no_beep
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
-	alias ls='ls -G'
+        alias ls='ls -G'
         export PATH=$HOME/.nodebrew/current/bin:$PATH
+        export BREWHOME=/usr/local/bin
         ;;
     linux*)
         #ここにLinux向けの設定
-	alias ls='ls --color=auto'
+        alias ls='ls --color=auto'
+        export BREWHOME=$HOME/.linuxbrew/bin
         ;;
 esac
 
