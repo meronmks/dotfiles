@@ -21,6 +21,9 @@ fi
 
 brew doctor
 
+# gitでクローンしてインストールするもの
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # brewでのインストール
 
 echo "Install zsh."
