@@ -4,32 +4,49 @@ chmod -R +x $HOME/.dotfiles/tmux/*
 #chmod +x ~/dotfiles/dot
 
 # brewコマンドのインストール
-echo "Install brew command."
 if [ "$(uname)" == 'Darwin' ]; then
     #Mac
+    echo "Install brew command."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    #Linux
-    sudo apt-get update
-    sudo apt-get install -y build-essential curl file git python-setuptools ruby bc
-    git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
-else
-    #その他
-    echo "Your platform ($(uname -a)) is not supported."
-    exit 1
+    brew doctor
 fi
-
-brew doctor
 
 # gitでクローンしてインストールするもの
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# brewでのインストール
-
-echo "Install zsh."
-brew install zsh
+if [ "$(uname)" == 'Darwin' ]; then
+    #Mac
+    echo "brew update."
+    brew update
+    echo "brew upgrade."
+    brew upgrade
+    echo "Install reattach-to-user-namespace."
+    brew install reattach-to-user-namespace
+    echo "Install zsh."
+    brew install zsh
+    echo "Install tmux"
+    brew install tmux
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+    if type apt 2>/dev/null 1>/dev/null then
+        echo "apt update."
+        sudo apt update
+        echo "apt upgrade."
+        sudo apt upgrade
+        echo "Install zsh."
+        sudo apt -y install zsh
+        echo "Install tmux."
+        sudo apt -y install tmux
+    elif type yum 2>/dev/null 1>/dev/null then
+        echo "yum update."
+        sudo yum update
+        echo "yum upgrade."
+        sudo yum upgrade
+        echo "Install zsh."
+        sudo yum -y install zsh
+        echo "Install tmux."
+        sudo yum -y install tmux
+    fi
+fi
 # ログインシェル変更
 echo "Change login shell."
 chsh -s $BREWHOME/zsh
-echo "Install tmux"
-brew install tmux
