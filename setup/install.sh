@@ -11,7 +11,7 @@ if [ "$(uname)" == 'Darwin' ]; then
 fi
 
 # gitでクローンしてインストールするもの
-git clone https://github.com/ssh0/dot $HOME/.zsh/dot
+git clone https://github.com/zplug/zplug ~/.zplug
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 if [ "$(uname)" == 'Darwin' ]; then
