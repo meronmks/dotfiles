@@ -1,0 +1,24 @@
+[cnfig]
+title="tmux"
+shell=zsh -l
+;shell=bash --login
+;shell=zsh
+use_cbwin=0
+use_tmux=0
+attach_tmux_locally=0
+; If attach_tmux_locally=1, add these codes to .bashrc/.zshrc:
+;[ -z "$TMUX" -a -n "$USE_TMUX" ] && {
+;    [ -n "$ATTACH_ONLY" ] && {
+;        tmux a 2>/dev/null || {
+;            cd && exec tmux
+;        }
+;        exit
+;    }
+;
+;    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
+;    exec tmux
+;}
+;icon=C:\Users\username\AppData\Local\lxss\bash.ico
+; To use Ubuntu icon, uncomment the above line, and replace username with yours.
+; To use mintty default icon, set icon=C:\path\to\wsl-terminal\bin\mintty.exe
+
