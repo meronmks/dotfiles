@@ -29,6 +29,8 @@ if [ "$(uname)" == 'Darwin' ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if type apt 2>/dev/null 1>/dev/null then
         echo "apt update."
+        sudo add-apt-repository ppa:git-core/ppa
+        echo "apt update."
         sudo apt update
         echo "apt upgrade."
         sudo apt upgrade
