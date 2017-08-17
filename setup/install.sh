@@ -28,27 +28,20 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if type apt > /dev/null 2>&1; then
-        echo "apt update."
         sudo add-apt-repository ppa:git-core/ppa
-        echo "apt update."
         sudo apt update
-        echo "apt upgrade."
         sudo apt upgrade
-        echo "Install zsh."
         sudo apt -y install zsh
-        echo "Install tmux."
         sudo apt -y install tmux
+        sudo apt -y install xsel
     elif type yum > /dev/null 2>&1; then
-        echo "yum update."
         sudo yum update
-        echo "yum upgrade."
         sudo yum upgrade
-        echo "Install zsh."
         sudo yum -y install zsh
-        echo "Install tmux."
         sudo yum -y install tmux
+        sudo yum -y install xsel
     fi
 fi
 # ログインシェル変更
-echo "Change login shell."
-chsh -s $BREWHOME/zsh
+# echo "Change login shell."
+# chsh -s $BREWHOME/zsh
