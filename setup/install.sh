@@ -27,7 +27,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     echo "Install tmux"
     brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    if [type apt 2>/dev/null 1>/dev/null]; then
+    if type apt > /dev/null 2>&1; then
         echo "apt update."
         sudo add-apt-repository ppa:git-core/ppa
         echo "apt update."
@@ -38,7 +38,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo apt -y install zsh
         echo "Install tmux."
         sudo apt -y install tmux
-    elif [type yum 2>/dev/null 1>/dev/null]; then
+    elif type yum > /dev/null 2>&1; then
         echo "yum update."
         sudo yum update
         echo "yum upgrade."
