@@ -10,10 +10,6 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew doctor
 fi
 
-# gitでクローンしてインストールするもの
-git clone https://github.com/zplug/zplug ~/.zplug
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 if [ "$(uname)" == 'Darwin' ]; then
     #Mac
     echo "brew update."
@@ -40,8 +36,17 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo yum -y install zsh
         sudo yum -y install tmux
         sudo yum -y install xsel
+    elif type pacman > /dev/null 2>&1; then
+        sudo pacman -Sy zsh
+        sudo pacman -Sy tmux
+        sudo pacman -Sy zsel
     fi
 fi
+
+# gitでクローンしてインストールするもの
+git clone https://github.com/zplug/zplug ~/.zplug
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # ログインシェル変更
 # echo "Change login shell."
 # chsh -s $BREWHOME/zsh
