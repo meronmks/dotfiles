@@ -40,6 +40,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo pacman -Sy zsh
         sudo pacman -Sy tmux
         sudo pacman -Sy zsel
+        sudo pacman -Sy git
     fi
 fi
 
