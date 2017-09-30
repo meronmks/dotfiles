@@ -4,3 +4,7 @@ build = "make"
 
 [[plugins]]
 repo   = "Shougo/unite.vim"
+
+[[plugins]] # toml syntax
+repo = "cespare/vim-toml"
+on_ft = "toml"
