@@ -41,7 +41,8 @@ endif
 set fenc=utf-8
 " 入力中のコマンドをステータスに表示する
 set showcmd
-
+" コマンド補完をいい感じに
+set wildmenu
 "見た目系
 " 行番号を表示
 set number
