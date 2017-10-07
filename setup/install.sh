@@ -33,6 +33,17 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
+        # git
+        sudo yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+        cd /usr/local/src/
+        git clone git://git.kernel.org/pub/scm/git/git.git
+        yum remove -y git
+        cd git
+        make prefix=/usr/local all
+        make prefix=/usr/local install
+        
+        # tmux
+        cd /usr/local/src/
         sudo yum -y install gcc libevent-devel ncurses-devel
         curl -kLO https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
         tar -zxvf tmux-2.3.tar.gz
