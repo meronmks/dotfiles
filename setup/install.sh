@@ -33,8 +33,13 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
-        sudo yum -y install zsh
-        sudo yum -y install tmux
+        sudo yum -y install gcc libevent-devel ncurses-devel
+        curl -kLO https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
+        tar -zxvf tmux-2.3.tar.gz
+        cd tmux-2.3
+        ./configure
+        make
+        sudo make install
         sudo yum -y install xsel
     elif type pacman > /dev/null 2>&1; then
         sudo pacman -Sy zsh
@@ -48,6 +53,9 @@ fi
 git clone https://github.com/zplug/zplug ~/.zplug
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+#zsh
+zsh
+source ~/.dotfiles/.zshrc
 # ログインシェル変更
 # echo "Change login shell."
 # chsh -s $BREWHOME/zsh
