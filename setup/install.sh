@@ -34,7 +34,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo yum update
         sudo yum upgrade
         # git
-        sudo yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+        yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker
         cd /usr/local/src/
         git clone git://git.kernel.org/pub/scm/git/git.git
         yum remove -y git
