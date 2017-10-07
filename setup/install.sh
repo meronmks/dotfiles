@@ -34,22 +34,22 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo yum update
         sudo yum upgrade
         # git
-        yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker
+        sudo yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker
         cd /usr/local/src/
-        git clone git://git.kernel.org/pub/scm/git/git.git
-        yum remove -y git
+        sudo git clone git://git.kernel.org/pub/scm/git/git.git
+        sudo yum remove -y git
         cd git
-        make prefix=/usr/local all
-        make prefix=/usr/local install
+        sudo make prefix=/usr/local all
+        sudo make prefix=/usr/local install
         
         # tmux
         cd /usr/local/src/
         sudo yum -y install gcc libevent-devel ncurses-devel
-        curl -kLO https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
-        tar -zxvf tmux-2.3.tar.gz
+        sudo curl -kLO https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
+        sudo tar -zxvf tmux-2.3.tar.gz
         cd tmux-2.3
-        ./configure
-        make
+        sudo ./configure
+        sudo make
         sudo make install
         sudo yum -y install xsel
     elif type pacman > /dev/null 2>&1; then
