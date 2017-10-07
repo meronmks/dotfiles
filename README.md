@@ -12,3 +12,8 @@ bash install.sh
 chsh --list-shells
 chsh -s hogehoge
 ```
+
+#WSL
+```bash
+sudo chown -R user:user .cache
+```
