@@ -7,13 +7,19 @@ cd ~/.dotfiles/setup
 bash install.sh
 ```
 
-##ChangeLoginShell
+## ChangeLoginShell
 ```bash
 chsh --list-shells
-chsh -s hogehoge
+```
+or
+```bash
+which zsh
+```
+```bash
+chsh -s zsh
 ```
 
-#WSL
+# WSL
 ```bash
 sudo chown -R user:user .cache
 ```
