@@ -12,21 +12,17 @@ fi
 
 if [ "$(uname)" == 'Darwin' ]; then
     #Mac
-    echo "brew update."
     brew update
-    echo "brew upgrade."
     brew upgrade
-    echo "Install reattach-to-user-namespace."
     brew install reattach-to-user-namespace
-    echo "Install zsh."
     brew install zsh
-    echo "Install tmux"
     brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if type apt > /dev/null 2>&1; then
         sudo add-apt-repository ppa:git-core/ppa
-        sudo apt update
-        sudo apt upgrade
+        sudo apt -y update
+        sudo apt -y upgrade
+        sudo apt -y install language-pack-ja
         sudo apt -y install zsh
         sudo apt -y install tmux
         sudo apt -y install xsel
