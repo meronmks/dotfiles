@@ -26,6 +26,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo apt -y install zsh
         sudo apt -y install tmux
         sudo apt -y install xsel
+        sudo apt -y install build-essential
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
