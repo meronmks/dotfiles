@@ -56,8 +56,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     fi
 fi
 
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+
 # gitでクローンしてインストールするもの
-git clone https://github.com/zplug/zplug ~/.zplug
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 #zsh
