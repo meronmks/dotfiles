@@ -28,6 +28,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo apt -y install xsel
         sudo apt -y install p7zip-full
         sudo apt -y install build-essential
+        sudo apt -y install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+        sudo apt -y install python3-tk tk-dev python-tk libfreetype6-dev
+        git clone https://github.com/yyuu/pyenv.git ~/.pyenv
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
