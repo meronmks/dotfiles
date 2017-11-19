@@ -2,6 +2,7 @@ cdpath=(~)
 
 # 環境変数
 export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
 export PATH=$HOME/.linuxbrew/bin:$PATH
@@ -10,6 +11,12 @@ export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
 export XDG_DATA_DIRS=$HOME/.linuxbrew/share:$XDG_DATA_DIRS
 export HOMEBREW_NO_ANALYTICS=1
 export GETAROOT=$HOME/Desktop/GETA
+#EasyWineの設定
+export WINE=/Applications/EasyWine.app/Contents/Resources/wine/bin/wine
+export WINEPREFIX=$HOME/Library/Caches/Wine/prefixes/defaults
+export XDG_CACHE_HOME=$HOME/Library/Caches/Wine
+export XDG_CONFIG_HOME=$HOME/Library/Caches/Wine
+export XDG_DATA_HOME=$HOME/Library/Caches/Wine
 
 PATH=$PATH:$HOME/.dotfiles/tmux
 
