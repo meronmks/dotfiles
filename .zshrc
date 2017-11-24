@@ -11,6 +11,11 @@ export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
 export XDG_DATA_DIRS=$HOME/.linuxbrew/share:$XDG_DATA_DIRS
 export HOMEBREW_NO_ANALYTICS=1
 export GETAROOT=$HOME/Desktop/GETA
+#LinuxBrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 
 PATH=$PATH:$HOME/.dotfiles/tmux
 
@@ -106,6 +111,7 @@ case ${OSTYPE} in
         #ここにLinux向けの設定
         alias ls='ls --color=auto'
         export BREWHOME=$HOME/.linuxbrew/bin
+        alias open='xdg-open 2>/dev/null'
         ;;
 esac
 
