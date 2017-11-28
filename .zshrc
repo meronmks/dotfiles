@@ -5,18 +5,9 @@ export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
-export PATH=$HOME/.linuxbrew/bin:$PATH
-export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
-export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
-export XDG_DATA_DIRS=$HOME/.linuxbrew/share:$XDG_DATA_DIRS
-export HOMEBREW_NO_ANALYTICS=1
 export GETAROOT=$HOME/Desktop/GETA
 #LinuxBrew
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-
+export HOMEBREW_NO_ANALYTICS=1
 PATH=$PATH:$HOME/.dotfiles/tmux
 
 # pyenvの環境変数等設定
