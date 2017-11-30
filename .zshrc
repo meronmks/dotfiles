@@ -8,6 +8,10 @@ export PERCOL=fzf
 export GETAROOT=$HOME/Desktop/GETA
 #LinuxBrew
 export HOMEBREW_NO_ANALYTICS=1
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
 PATH=$PATH:$HOME/.dotfiles/tmux
 
 # pyenvの環境変数等設定

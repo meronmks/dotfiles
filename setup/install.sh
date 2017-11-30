@@ -16,8 +16,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo add-apt-repository ppa:git-core/ppa
         sudo apt -y update
         sudo apt -y upgrade
-        sudo apt -y install xsel language-pack-ja build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev gettext
-        # sudo apt -y install linuxbrew
+        sudo apt -y install xsel language-pack-ja build-essential
+        sudo apt -y install linuxbrew-wrapper
         brew install zsh tmux p7zip-full git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev python3-tk tk-dev python-tk libfreetype6-dev
         git clone https://github.com/yyuu/pyenv.git ~/.pyenv
     elif type yum > /dev/null 2>&1; then
