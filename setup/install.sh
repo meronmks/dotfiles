@@ -47,5 +47,6 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
     echo "$(tput setaf 2)Success add /etc/shells to $BREWHOME/zsh ✔︎$(tput sgr0)"
 fi
 chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
-# echo "Change login shell."
-echo "$(tput setaf 2)Success install ✔︎$(tput sgr0)"
+
+# シェルの再起動
+exec $SHELL -l
