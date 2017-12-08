@@ -14,13 +14,6 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 PATH=$PATH:$HOME/.dotfiles/tmux
 
-# pyenvの環境変数等設定
-if [[ -e $HOME/.pyenv ]]; then
-    export PYENV_ROOT=$HOME/.pyenv
-    export PATH=$PYENV_ROOT/bin:$PATH
-    eval "$(pyenv init -)"
-fi
-
 #fzfの存在確認となければインストールする
 if [ -e $HOME/.fzf ]; then
     # 存在している場合（一応確認）
@@ -48,6 +41,13 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   else
     :  # Start terminal normally
   fi
+fi
+
+# pyenvの環境変数等設定
+if [[ -e $HOME/.pyenv ]]; then
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
 fi
 
 # 重複パスを登録しない
