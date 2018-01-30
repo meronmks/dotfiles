@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ~/.dotfiles/.bashrc
 if [ "$(uname)" == 'Darwin' ]; then
     # Mac
     echo "Chaek Homebrew..."
