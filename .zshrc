@@ -1,5 +1,25 @@
 cdpath=(~)
 
+#alias
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+        alias ls='ls -G'
+        export PATH=$HOME/.nodebrew/current/bin:$PATH
+        export BREWHOME=/usr/local/bin
+        ;;
+    linux*)
+        #ここにLinux向けの設定
+        alias ls='ls --color=auto'
+        export BREWHOME=$HOME/.linuxbrew/bin
+        alias open='xdg-open 2>/dev/null'
+        ;;
+esac
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
@@ -8,7 +28,7 @@ export PERCOL=fzf
 export GETAROOT=$HOME/Desktop/GETA
 #LinuxBrew
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
@@ -93,26 +113,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #ビープ音を鳴らさない
 setopt no_beep
-
-#alias
-case ${OSTYPE} in
-    darwin*)
-        #ここにMac向けの設定
-        alias ls='ls -G'
-        export PATH=$HOME/.nodebrew/current/bin:$PATH
-        export BREWHOME=/usr/local/bin
-        ;;
-    linux*)
-        #ここにLinux向けの設定
-        alias ls='ls --color=auto'
-        export BREWHOME=$HOME/.linuxbrew/bin
-        alias open='xdg-open 2>/dev/null'
-        ;;
-esac
-
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 #npm
 npm completion

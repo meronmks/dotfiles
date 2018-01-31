@@ -121,12 +121,9 @@ if [ "$(uname)" == 'Darwin' ]; then
     export BREWHOME="/usr/local/bin"
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="$HOME/.linuxbrew/bin"
-else
-    echo "Your platform ($(uname -a)) is not supported."
-    exit 1
 fi
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
