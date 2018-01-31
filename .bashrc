@@ -123,7 +123,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="$HOME/.linuxbrew/bin"
 fi
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
