@@ -21,7 +21,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo add-apt-repository ppa:git-core/ppa
         sudo apt -y update
         sudo apt -y upgrade
-        sudo apt -y install xsel language-pack-ja build-essential
+        sudo apt -y install xsel language-pack-ja build-essential curl
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
         brew install zsh tmux p7zip-full openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev python3-tk tk-dev python-tk libfreetype6-dev
     elif type yum > /dev/null 2>&1; then
