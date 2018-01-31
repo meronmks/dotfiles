@@ -120,7 +120,7 @@ fi
 if [ "$(uname)" == 'Darwin' ]; then
     export BREWHOME="/usr/local/bin"
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    export BREWHOME="$HOME/.linuxbrew/bin"
+    export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
 fi
 export HOMEBREW_NO_ANALYTICS=1
 export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"

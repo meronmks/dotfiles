@@ -11,7 +11,7 @@ case ${OSTYPE} in
     linux*)
         #ここにLinux向けの設定
         alias ls='ls --color=auto'
-        export BREWHOME=$HOME/.linuxbrew/bin
+        export BREWHOME=/home/linuxbrew/.linuxbrew/bin
         alias open='xdg-open 2>/dev/null'
         ;;
 esac

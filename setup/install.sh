@@ -16,7 +16,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install zsh
     brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    export BREWHOME="$HOME/.linuxbrew/bin"
+    export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     if type apt > /dev/null 2>&1; then
         sudo add-apt-repository ppa:git-core/ppa
         sudo apt -y update
