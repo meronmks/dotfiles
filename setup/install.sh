@@ -17,6 +17,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
+    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
     if type apt > /dev/null 2>&1; then
         sudo add-apt-repository ppa:git-core/ppa
         sudo apt -y update
@@ -38,7 +39,7 @@ else
 fi
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
+chmod -R 755 ~/.zplug
 # gitでクローンしてインストールするもの
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
