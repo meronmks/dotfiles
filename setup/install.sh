@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ ${EUID:-${UID}} = 0 ]; then
+    alias sudo=''
+fi
 if [ "$(uname)" == 'Darwin' ]; then
     # Mac
     export BREWHOME="/usr/local/bin"
