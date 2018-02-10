@@ -1,7 +1,14 @@
 #!/bin/bash
-if [ ${EUID:-${UID}} = 0 ]; then
-    alias sudo=''
+
+if type sudo > /dev/null 2>&1; then
+    SUDO='sudo'
+else
+    SUDO=''
 fi
+if [ ${EUID:-${UID}} = 0 ]; then
+    SUDO=''
+fi
+
 if [ "$(uname)" == 'Darwin' ]; then
     # Mac
     export BREWHOME="/usr/local/bin"
@@ -22,9 +29,12 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
     if type apt > /dev/null 2>&1; then
-        sudo apt -y update
-        sudo apt -y upgrade
-        sudo apt -y install xsel language-pack-ja build-essential curl
+        $SUDO apt -y update
+        $SUDO apt -y upgrade
+        $SUDO apt -y install xsel
+        $SUDO apt -y install language-pack-ja
+        $SUDO apt -y install build-essential
+        $SUDO apt -y install curl
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
         brew doctor
         brew update && brew upgrade
