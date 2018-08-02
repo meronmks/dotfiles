@@ -70,6 +70,8 @@ if [[ -e $HOME/.pyenv ]]; then
     eval "$(pyenv init -)"
 fi
 
+# rbenvの設定
+eval "$(rbenv init -)"
 # 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
@@ -113,9 +115,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #ビープ音を鳴らさない
 setopt no_beep
-
-#npm
-npm completion
 
 #zplug
 unsetopt BG_NICE
