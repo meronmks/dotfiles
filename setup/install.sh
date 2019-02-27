@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../.bashrc
+
 if type sudo > /dev/null 2>&1; then
     SUDO='sudo'
 else
