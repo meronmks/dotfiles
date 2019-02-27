@@ -18,6 +18,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     if type brew > /dev/null 2>&1; then
         echo "$(tput setaf 2)Already installed Homebrew ✔︎$(tput sgr0)"
     else
+        echo "Installing xcode-select"
+        xcode-select --install
         echo "Installing Homebrew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && echo "$(tput setaf 2)Success install Homebrew ✔︎$(tput sgr0)"
     fi
