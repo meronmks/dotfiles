@@ -73,3 +73,6 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
     echo "$(tput setaf 2)Success add /etc/shells to $BREWHOME/zsh ✔︎$(tput sgr0)"
 fi
 chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
+
+$SUDO chown -R $USER:$USER ~/.cache
+
