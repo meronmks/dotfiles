@@ -28,7 +28,6 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install reattach-to-user-namespace
     brew install git
     brew install zsh
-    brew install tmux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
@@ -42,7 +41,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
         brew doctor
         brew update && brew upgrade
-        brew install zsh tmux p7zip openssl
+        brew install zsh p7zip openssl
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
@@ -51,7 +50,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
         brew doctor
         brew update && brew upgrade
-        brew install zsh tmux p7zip openssl
+        brew install zsh p7zip openssl
     fi
 else
     echo "Your platform ($(uname -a)) is not supported."
