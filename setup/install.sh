@@ -58,6 +58,7 @@ chmod -R 755 ~/.zplug
 # gitでクローンしてインストールするもの
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+git cloen https://github.com/takaaki-kasai/git-foresta.git ~/.git-foresta
 
 # ログインシェル変更
 echo "Change LoginShell..."

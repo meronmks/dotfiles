@@ -132,3 +132,6 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 umask 002
+
+# git-foresta
+export PATH="$HOME/.git-foresta:$PATH"
