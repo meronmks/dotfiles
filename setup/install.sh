@@ -38,20 +38,16 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         $SUDO apt -y install language-pack-ja
         $SUDO apt -y install build-essential
         $SUDO apt -y install curl
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-        brew doctor
-        brew update && brew upgrade
-        brew install zsh p7zip openssl
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
         sudo yum -y install xsel
         sudo yum -y groupinstall "Development Tools" && sudo yum -y install xsel curl m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel openssl-devel
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-        brew doctor
-        brew update && brew upgrade
-        brew install zsh p7zip openssl
     fi
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    brew doctor
+    brew update && brew upgrade
+    brew install zsh p7zip openssl
 else
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
