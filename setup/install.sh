@@ -56,7 +56,6 @@ fi
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 chmod -R 755 ~/.zplug
 # gitでクローンしてインストールするもの
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/takaaki-kasai/git-foresta.git ~/.git-foresta && chmod +x ~/.git-foresta
 
