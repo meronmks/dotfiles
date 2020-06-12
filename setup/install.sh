@@ -47,7 +47,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     brew doctor
     brew update && brew upgrade
-    brew install zsh p7zip openssl
+    brew install git git-lfs zsh p7zip openssl
 else
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
@@ -58,6 +58,9 @@ chmod -R 755 ~/.zplug
 # gitでクローンしてインストールするもの
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/takaaki-kasai/git-foresta.git ~/.git-foresta && chmod +x ~/.git-foresta
+
+# gitの認証情報を保存するように設定
+git config --global credential.helper cache
 
 # ログインシェル変更
 echo "Change LoginShell..."

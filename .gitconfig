@@ -5,3 +5,6 @@
 	editor = vim -c \"set fenc=utf-8\"
 	autoCRLF = false
 	quotepath = false
+	filemode = false
+[credential]
+	helper = cache
