@@ -48,6 +48,11 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     brew doctor
     brew update && brew upgrade
     brew install git git-lfs zsh p7zip openssl
+    if type apt > /dev/null 2>&1; then
+        $SUDO apt -y remove git
+    elif type yum > /dev/null 2>&1; then
+        sudo yum -y remove git
+    fi
 else
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
