@@ -103,6 +103,16 @@ source ~/.zplug/init.zsh
 #追加したいプラグインをここへ
 zplug "ssh0/dot", use:"*.sh"
 zplug "zsh-users/zsh-completions"
+# 非同期処理できるようになる
+zplug "mafredri/zsh-async"
+# 256色表示にする
+zplug "chrissicool/zsh-256color"
+# 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
+zplug "zsh-users/zsh-syntax-highlighting"
+# コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
+zplug "zsh-users/zsh-history-substring-search"
+# 過去に入力したコマンドの履歴が灰色のサジェストで出る
+zplug "zsh-users/zsh-autosuggestions"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -113,7 +123,7 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
 
 #dotfiles
 compdef dotall=dot_main
