@@ -28,7 +28,6 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install reattach-to-user-namespace
     brew install git
     brew install zsh
-    brew install zplug
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
@@ -48,7 +47,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     brew doctor
     brew update && brew upgrade
-    brew install git git-lfs zsh p7zip openssl zplug
+    brew install git git-lfs zsh p7zip openssl
     if type apt > /dev/null 2>&1; then
         $SUDO apt -y remove git
     elif type yum > /dev/null 2>&1; then
@@ -62,7 +61,7 @@ fi
 # gitでクローンしてインストールするもの
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/takaaki-kasai/git-foresta.git ~/.git-foresta && chmod +x ~/.git-foresta
-
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
 # gitの認証情報を保存するように設定
 git config --global credential.helper cache
 
@@ -75,6 +74,4 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
     echo "$(tput setaf 2)Success add /etc/shells to $BREWHOME/zsh ✔︎$(tput sgr0)"
 fi
 chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
-
-$SUDO chown -R $USER:$USER ~/.cache
 
