@@ -29,6 +29,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install git
     brew install zsh
     brew install pyenv
+    brew install rbenv
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
@@ -48,7 +49,11 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     brew doctor
     brew update && brew upgrade
-    brew install git git-lfs zsh p7zip openssl pyenv
+    brew install git git-lfs openssl
+    brew install zsh
+    brew install p7zip
+    brew install pyenv
+    brew install rbenv
     if type apt > /dev/null 2>&1; then
         $SUDO apt -y remove git
     elif type yum > /dev/null 2>&1; then
