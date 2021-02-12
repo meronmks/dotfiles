@@ -21,7 +21,7 @@ if [ "$(uname)" == 'Darwin' ]; then
         echo "Installing xcode-select"
         xcode-select --install
         echo "Installing Homebrew..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && echo "$(tput setaf 2)Success install Homebrew ✔︎$(tput sgr0)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && echo "$(tput setaf 2)Success install Homebrew ✔︎$(tput sgr0)"
     fi
     brew doctor
     brew update && brew upgrade
