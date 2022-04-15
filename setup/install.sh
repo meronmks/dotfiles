@@ -85,5 +85,9 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
     sudo sh -c "echo "$BREWHOME/zsh"  >> /etc/shells"
     echo "$(tput setaf 2)Success add /etc/shells to $BREWHOME/zsh ✔︎$(tput sgr0)"
 fi
-chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
+if type chsh > /dev/null 2>&1; then
+    chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
+elif type lchsh > /dev/null 2>&1; then
+    lchsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
+fi
 
