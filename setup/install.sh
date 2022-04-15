@@ -40,6 +40,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         $SUDO apt -y install language-pack-ja
         $SUDO apt -y install build-essential
         $SUDO apt -y install curl
+    elif type dnf > /dev/null 2>&1; then
+        sudo dnf -y update
+        sudo dnf -y upgrade
+        sudo dnf -y groupinstall "Development Tools" && dnf yum -y install xsel curl m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel openssl-devel
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
@@ -56,6 +60,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     brew install rbenv
     if type apt > /dev/null 2>&1; then
         $SUDO apt -y remove git
+    elif type dnf > /dev/null 2>&1; then
+        sudo dnf -y remove git
     elif type yum > /dev/null 2>&1; then
         sudo yum -y remove git
     fi
