@@ -43,7 +43,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     elif type dnf > /dev/null 2>&1; then
         sudo dnf -y update
         sudo dnf -y upgrade
-        sudo dnf -y groupinstall "Development Tools" && dnf yum -y install xsel curl m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel openssl-devel
+        sudo dnf -y groupinstall "Development Tools" && dnf yum -y install xsel curl m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel openssl-devel glibc-langpack-ja util-linux-user vim
     elif type yum > /dev/null 2>&1; then
         sudo yum update
         sudo yum upgrade
@@ -85,9 +85,5 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
     sudo sh -c "echo "$BREWHOME/zsh"  >> /etc/shells"
     echo "$(tput setaf 2)Success add /etc/shells to $BREWHOME/zsh ✔︎$(tput sgr0)"
 fi
-if type chsh > /dev/null 2>&1; then
-    chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
-elif type lchsh > /dev/null 2>&1; then
-    lchsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
-fi
+chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
 
