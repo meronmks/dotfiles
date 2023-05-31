@@ -25,7 +25,6 @@ export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 export EDITOR=vim
 export PERCOL=fzf
-export GETAROOT=$HOME/Desktop/GETA
 #LinuxBrew
 export HOMEBREW_NO_ANALYTICS=1
 export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
@@ -145,3 +144,7 @@ umask 002
 
 # git-foresta
 export PATH="$HOME/.git-foresta:$PATH"
+
+# buf command
+export PATH="$(go env GOBIN):${PATH}"
+export PATH="$(go env GOPATH)/bin:${PATH}"

@@ -1,4 +1,5 @@
 #!/bin/bash
+cd `dirname $0`
 
 source ../.bashrc
 
@@ -58,6 +59,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     brew install p7zip
     brew install pyenv
     brew install rbenv
+    #dev
+    brew install go
     if type apt > /dev/null 2>&1; then
         $SUDO apt -y remove git
     elif type dnf > /dev/null 2>&1; then
@@ -87,3 +90,4 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
 fi
 chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
 
+zsh 0 | source .dotfile/.zshrc
