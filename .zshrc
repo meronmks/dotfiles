@@ -27,10 +27,6 @@ export EDITOR=vim
 export PERCOL=fzf
 #LinuxBrew
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
-export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 
 #fzfの存在確認となければインストールする
 if [ -e $HOME/.fzf ]; then

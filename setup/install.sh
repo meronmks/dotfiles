@@ -51,7 +51,11 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
         sudo yum -y install xsel
         sudo yum -y groupinstall "Development Tools" && sudo yum -y install xsel curl m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel openssl-devel
     fi
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
     brew doctor
     brew update && brew upgrade
     brew install git git-lfs openssl
@@ -90,4 +94,5 @@ if grep $BREWHOME/zsh /etc/shells > /dev/null; then
 fi
 chsh -s $BREWHOME/zsh && echo "$(tput setaf 2)Success change shell zsh ✔︎$(tput sgr0)"
 
-zsh 0 | source .dotfile/.zshrc
+touch ~/.zshrc
+zsh -c "source ~/.dotfiles/.zshrc"
