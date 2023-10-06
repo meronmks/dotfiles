@@ -31,6 +31,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install zsh
     brew install pyenv
     brew install rbenv
+    brew install goenv
+    brew install direnv
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     export BREWHOME="/home/linuxbrew/.linuxbrew/bin"
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
@@ -63,8 +65,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     brew install p7zip
     brew install pyenv
     brew install rbenv
+    brew install goenv
+    brew install direnv
     #dev
-    brew install go
     if type apt > /dev/null 2>&1; then
         $SUDO apt -y remove git
     elif type dnf > /dev/null 2>&1; then

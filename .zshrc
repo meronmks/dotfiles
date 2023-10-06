@@ -141,6 +141,13 @@ umask 002
 # git-foresta
 export PATH="$HOME/.git-foresta:$PATH"
 
-# buf command
-export PATH="$(go env GOBIN):${PATH}"
-export PATH="$(go env GOPATH)/bin:${PATH}"
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
