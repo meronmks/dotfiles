@@ -83,7 +83,7 @@ fi
 # gitでクローンしてインストールするもの
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/takaaki-kasai/git-foresta.git ~/.git-foresta && chmod +x ~/.git-foresta
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+curl -L git.io/antigen > ~/.antigen/antigen.zsh
 # gitの認証情報を保存するように設定
 git config --global credential.helper cache
 

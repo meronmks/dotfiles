@@ -91,34 +91,22 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #ビープ音を鳴らさない
 setopt no_beep
 
-#zplug
-unsetopt BG_NICE
-source ~/.zplug/init.zsh
+#antigen
+source ~/.antigen/antigen.zsh
 
 #追加したいプラグインをここへ
-zplug "ssh0/dot", use:"*.sh"
-zplug "zsh-users/zsh-completions"
-# 非同期処理できるようになる
-zplug "mafredri/zsh-async"
+antigen bundle ssh0/dot
+antigen bundle zsh-users/zsh-completions
 # 256色表示にする
-zplug "chrissicool/zsh-256color"
+antigen bundle chrissicool/zsh-256color
 # 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
-zplug "zsh-users/zsh-syntax-highlighting"
+antigen bundle zsh-users/zsh-syntax-highlighting
 # コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
-zplug "zsh-users/zsh-history-substring-search"
+antigen bundle zsh-users/zsh-history-substring-search
 # 過去に入力したコマンドの履歴が灰色のサジェストで出る
-zplug "zsh-users/zsh-autosuggestions"
+antigen bundle zsh-users/zsh-autosuggestions
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
+antigen apply
 
 #dotfiles
 compdef dotall=dot_main
@@ -126,17 +114,6 @@ export DOT_REPO="https://github.com/meronmks/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
 
 # git設定
-RPROMPT="%{${reset_color}%}"
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () { vcs_info }
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
-umask 002
 
 # git-foresta
 export PATH="$HOME/.git-foresta:$PATH"
